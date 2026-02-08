@@ -1,0 +1,6 @@
+loadConfig({
+  "custom_html": {
+    "lang": ["en_US", "th_TH", "my_MM", "zh_CN", "vi_VN", "es_ES"],
+    "login_options": ["voucher", "fixaccount"]
+  }
+});

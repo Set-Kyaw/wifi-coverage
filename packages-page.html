@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>AIS5G - Packages</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+
+    <link rel="icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <div class="body-loading" id="body_loading">
+      <img src="./img/loading.gif" style="width: 320px; height: 240px" />
+    </div>
+
+    <div class="body-wrapper">
+      <div class="body-background">
+        <div class="body-background-mask"></div>
+      </div>
+
+      <div class="body-content-wrapper">
+        
+
+        <!-- Header Section -->
+        <div class="header-section">
+          <!-- Logo -->
+          <div class="logo-wrapper">
+            <img class="logo-image" src="./img/logoSlow.gif" alt="AIS 5G Logo" />
+          </div>
+          <!-- Language Selector (Independent) -->
+        <div class="dropdown language-select" id="language_select">
+          <span class="dropdown-arrow">▼</span>
+          <span class="dropdown-label">English</span>
+          <span class="dropdown-arrow">▼</span>
+          <span class="dropdown-menu" id="language_menu">
+            <!-- Languages will be populated by JS -->
+          </span>
+        </div>
+        </div>
+
+        <!-- Packages Section -->
+        <div class="packages-wrapper">
+          <h2 class="packages-title" data-i18n="packages_title"></h2>
+          <div id="packages_container" class="packages-container"></div>
+        </div>
+
+        <!-- Go to Wifi Coverage Button -->
+          <div class="go-to-packages-button-wrapper">
+            <a href="index.html" class="go-to-packages-button" data-i18n="wifi_coverage_map">
+              WiFi Coverage Map ➡️
+            </a>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-section">
+           
+            <div class="neon-container">
+              <div class="neon-row">
+                <img src="./img/flags/Myanmar-xs.gif" alt="Myanmar Flag">
+                <a href="tel:+959454821595">09 454 821 595</a>
+              </div>
+              <div class="neon-row">
+                <img src="./img/flags/Thailand-xs.gif" alt="Thailand Flag">
+                <a href="tel:+66927279439">092 727 9439</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="./js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/language.js"></script>
+    <script type="text/javascript" src="./js/i18n/i18n.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./loadConfig.json"></script>
+  </body>
+</html>

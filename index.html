@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>AIS 5G - WiFi Coverage Map</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+
+    <link rel="icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./css/coverage-map.css" />
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <!-- Loading Screen -->
+    <div class="body-loading" id="body_loading">
+      <img
+        src="./img/loading.gif"
+        alt="Loading..."
+        style="width: 320px; height: 240px"
+      />
+    </div>
+
+    <!-- Main Container -->
+    <div class="body-wrapper">
+      <!-- Background -->
+      <div class="body-background">
+        <div class="body-background-mask"></div>
+      </div>
+
+      <!-- Content Wrapper -->
+      <div class="body-content-wrapper">
+        <div class="body-content" id="body_content">
+          <!-- Logo Section -->
+          <div class="content-logo-wrapper">
+            <img
+              class="content-logo"
+              src="./img/logoSlow.gif"
+              alt="AIS 5G Logo"
+            />
+          </div>
+
+          <!-- Map Title -->
+          <div class="map-title-wrapper">
+            <h1 class="map-title" data-i18n="coverage_map_title"></h1>
+            <p class="map-subtitle" data-i18n="coverage_map_subtitle"></p>
+          </div>
+
+          <!-- Map Container -->
+          <div class="map-container">
+            <div class="map-wrapper">
+              <!-- Google Maps Iframe -->
+              <iframe
+                id="coverage_map"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+
+              <!-- Map Overlay Controls -->
+              <div class="map-controls">
+                <button
+                  class="map-control-btn"
+                  id="refresh_map"
+                  data-i18n="refresh_map"
+                >
+                  <span class="icon">🔄</span>
+                  <span class="Refresh">Refresh</span>
+                </button>
+                <button
+                  class="map-control-btn"
+                  id="fullscreen_map"
+                  data-i18n="fullscreen"
+                >
+                  <span class="icon">⛶</span>
+                  <span class="text">Fullscreen</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Map Legend -->
+            <div class="map-legend">
+              <h3 class="legend-title" data-i18n="legend">Legend</h3>
+              <div class="legend-items">
+                <div class="legend-item">
+                  <span class="legend-icon" style="background: #ffffff"
+                    ><img
+                      src="./icons/wifi.gif"
+                      width="30px"
+                      height="30px"
+                      alt="AIS5G Icon"
+                  /></span>
+                  <span class="legend-text" data-i18n="AIS5G_location"></span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-icon" style="background: #ffffff"
+                    ><img
+                      src="./icons/ais-wifi.png"
+                      width="30px"
+                      height="30px"
+                      alt="AIS Wi-Fi Icon"
+                  /></span>
+                  <span class="legend-text" data-i18n="AIS_location"
+                    >AIS. Wi-Fi Locations</span
+                  >
+                </div>
+                <div class="legend-item">
+                  <span class="legend-icon" style="background: #ffffff"
+                    ><img
+                      src="./icons/baht.png"
+                      width="30px"
+                      height="30px"
+                      alt="Buy Vouchers Icon"
+                  /></span>
+                  <span class="legend-text" data-i18n="buy_vouchers"
+                    >Buy Vouchers!</span
+                  >
+                </div>
+                <div class="legend-item">
+                  <span class="legend-icon" style="background: #ffffff"
+                    ><img
+                      src="./icons/availabile-soon.gif"
+                      width="30px"
+                      height="30px"
+                      alt="Available Soon Icon"
+                  /></span>
+                  <span class="legend-text" data-i18n="available_soon"
+                    >Available Soon</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coverage Info Cards -->
+          <div class="coverage-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <img
+                  src="./icons/wifi.gif"
+                  width="50px"
+                  height="50px"
+                  alt="Coverage Areas Icon"
+                />
+              </div>
+              <h3 data-i18n="coverage_areas">WiFi Coverage Areas</h3>
+              <p class="info-number" id="coverage_areas">50+</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">⚡</div>
+              <h3 data-i18n="avg_speed">Avg. Speed</h3>
+              <p data-i18n="up_to_speed" class="info-number">
+                up to 20–80 Mbps
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">👥</div>
+              <h3 data-i18n="active_users">Active Users</h3>
+              <p class="info-number" id="active_users">50+</p>
+            </div>
+          </div>
+
+          <!-- Go to Packages Button -->
+          <div class="go-to-packages-button-wrapper">
+            <a
+              href="packages-page.html"
+              class="go-to-packages-button"
+              data-i18n="go_to_packages"
+            >
+              See All Packages ➡️
+            </a>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-section">
+            <div class="neon-container">
+              <div class="neon-row">
+                <img src="./img/flags/Myanmar-xs.gif" alt="Myanmar Flag" />
+                <a href="tel:+959454821595">09 454 821 595</a>
+              </div>
+              <div class="neon-row">
+                <img src="./img/flags/Thailand-xs.gif" alt="Thailand Flag" />
+                <a href="tel:+66927279439">092 727 9439</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/language.js"></script>
+    <script type="text/javascript" src="./js/i18n/i18n.js"></script>
+    <script type="text/javascript" src="./js/coverage-map.js"></script>
+    <script type="text/javascript" src="./loadConfig.json"></script>
+  </body>
+</html>
